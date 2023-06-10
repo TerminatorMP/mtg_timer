@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  mtg_timer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - sigma_shared_network
+#    ports:
+#      - 13001:2003
+    environment:
+      NODE_ENV: production
+networks:
+  sigma_shared_network:
+    external: true
+    name: sigma_shared_network
